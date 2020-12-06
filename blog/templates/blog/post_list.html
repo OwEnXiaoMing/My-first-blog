@@ -1,0 +1,51 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    {% for post in posts %}
+        <div class="post">
+            <div class="date">
+                {{ post.published_date }}
+            </div>
+            <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}
+{% load static %}
+<html>
+    <head>
+        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <title>Xiaoming's blog</title>
+    </head>
+    <body>
+        <div class="page-header">
+            <h1><a href="/">Xiaoming's blog</a></h1>
+        </div>
+<div>
+    <h1><a href="/">俺不学了 Blog</a></h1>
+</div>
+
+<div class="content container">
+    <div class="row">
+        <div class="col-md-8">
+
+
+        </div>
+    </div>
+</div>
+        <div>
+            <p>published: 05.12.2020, 17:50</p>
+            <h2><a href="">My first post</a></h2>
+            <p>害呀我真是佛了，为什么大半夜还要做这个东西啊</p>
+        </div>
+
+        <div>
+            <p>published: 05.12.2020, 17:51</p>
+            <h2><a href="">Mon second post</a></h2>
+            <p>他说随便让我写啥，反正交了作业就行了</p>
+        </div>
+    </body>
+</html>
